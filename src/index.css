@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Patrick+Hand&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 58 76% 89%;
+    --foreground: 340 30% 25%;
+    --card: 330 100% 95%;
+    --card-foreground: 340 30% 25%;
+    --popover: 58 76% 89%;
+    --popover-foreground: 340 30% 25%;
+    --primary: 93 52% 68%;
+    --primary-foreground: 340 30% 15%;
+    --secondary: 330 100% 95%;
+    --secondary-foreground: 340 50% 45%;
+    --muted: 58 50% 82%;
+    --muted-foreground: 340 20% 40%;
+    --accent: 340 76% 77%;
+    --accent-foreground: 340 30% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 340 50% 82%;
+    --input: 340 50% 82%;
+    --ring: 340 76% 77%;
+    --radius: 2rem;
+
+    --clay-shadow: 20px 20px 60px #d1d0b3, -20px -20px 60px #ffffff, inset 6px 6px 12px rgba(0,0,0,0.05);
+    --clay-shadow-sm: 8px 8px 24px #d1d0b3, -8px -8px 24px #ffffff, inset 3px 3px 6px rgba(0,0,0,0.03);
+    --clay-shadow-hover: 12px 12px 24px #dcdbb8, -12px -12px 24px #ffffff, inset 8px 8px 16px rgba(0,0,0,0.05);
+    --sticker-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+
+    --sidebar-background: 58 76% 89%;
+    --sidebar-foreground: 340 30% 25%;
+    --sidebar-primary: 93 52% 68%;
+    --sidebar-primary-foreground: 340 30% 15%;
+    --sidebar-accent: 330 100% 95%;
+    --sidebar-accent-foreground: 340 30% 25%;
+    --sidebar-border: 340 50% 82%;
+    --sidebar-ring: 340 76% 77%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Patrick Hand', cursive;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gaegu', cursive;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .clay-surface {
+    box-shadow: var(--clay-shadow);
+    @apply rounded-[40px];
+  }
+  .clay-surface-sm {
+    box-shadow: var(--clay-shadow-sm);
+    @apply rounded-[30px];
+  }
+  .sticker {
+    box-shadow: var(--sticker-shadow);
+    @apply rounded-[20px] border-2 border-white/80;
+  }
+  .clay-button {
+    box-shadow: inset -4px -4px 10px rgba(0,0,0,0.1), inset 4px 4px 10px rgba(255,255,255,0.5);
+    @apply rounded-[30px] px-8 py-4 bg-primary font-bold;
+    font-family: 'Gaegu', cursive;
+  }
+  .bg-doodle-pattern {
+    background-image:
+      radial-gradient(circle, #B8DB8022 1.5px, transparent 1.5px),
+      radial-gradient(circle, #F39EB615 1px, transparent 1px),
+      radial-gradient(circle, #F7C94812 2px, transparent 2px);
+    background-size:
+      60px 60px,
+      45px 45px,
+      90px 90px;
+    background-position:
+      0 0,
+      22px 30px,
+      45px 15px;
+  }
+}
